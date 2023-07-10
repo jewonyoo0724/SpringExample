@@ -13,23 +13,23 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 
 @SpringBootApplication
-@MapperScan(basePackages="com.alpaca.eg.*")
+//@MapperScan(basePackages="com.alpaca.eg.*")
 public class SpringExampleApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringExampleApplication.class, args);
 	}
 	
-	@Bean
-	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception
-	{
-		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-		sessionFactory.setDataSource(dataSource);
-		
-		Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mapper.xml");
-		sessionFactory.setMapperLocations(res);
-		
-		return sessionFactory.getObject();
-	}
+//	@Bean
+//	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception
+//	{
+//		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+//		sessionFactory.setDataSource(dataSource);
+//		
+//		Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mapper.xml");
+//		sessionFactory.setMapperLocations(res);
+//		
+//		return sessionFactory.getObject();
+//	}
 
 }
