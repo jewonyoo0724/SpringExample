@@ -23,6 +23,25 @@
 			#{intro}
 		);
 	</insert>
+	
+	<insert id="insertUserByObject" parameterType="com.alpaca.eg.jsp.domain.User"
+	useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+			`new_user`
+		(
+			`name`,
+			`yyyymmdd`,
+			`email`,
+			`introduce`
+		)
+		VALUE
+		(
+			#{name},
+			#{yyyymmdd},
+			#{email},
+			#{introduce}
+		);
+	</insert>
 
 	<select id="selectLastUser" resultType="com.alpaca.eg.jsp.domain.User">
 		SELECT

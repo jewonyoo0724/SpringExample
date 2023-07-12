@@ -22,16 +22,30 @@ public class UserController {
 	// get name, birthday, email, introduction & save data
 //	@RequestMapping(path="/jsp/user/add", method=RequestMethod.POST)
 	@PostMapping("/add")
-	@ResponseBody
+	//@ResponseBody
 	public String createUser(
 			@RequestParam("name") String name, 
 			@RequestParam("birthday") String birthday, 
 			@RequestParam("email") String email, 
-			@RequestParam("intro") String intro)
+			@RequestParam("intro") String intro,
+			Model model)
 	{
 		
-		int count = userService.addUser(name, birthday, email, intro);
-		return count + " rows affected";
+		//int count = userService.addUser(name, birthday, email, intro);
+		
+		User user = new User();
+		
+		user.setName(name);
+		user.setYyyymmdd(birthday);
+		user.setEmail(email);
+		user.setIntroduce(intro);
+		
+		int count = userService.addUserByObject(user);
+		
+		model.addAttribute("result", user);
+		
+		//return count + " rows affected";
+		return "jsp/userinfo";
 	}
 	
 	//method to show userinput page
