@@ -36,6 +36,30 @@
 	<c:forEach var="fruit" items="${fruitList }" varStatus="status">
 		${fruit }::${status.count }::${status.index }::${status.first}::${status.last }<br>
 	</c:forEach>
+
+
+	<h3>User List</h3>
+	
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Hobby</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="user" items="${userList }">
+				<tr>
+					<td>${user.name }</td>
+					<td>${user.age }</td>
+					<td>${user.hobby }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	
+	</table>
+	
 	
 </body>
 </html>
