@@ -25,4 +25,16 @@ public class NewUserService {
 		int count = newUserRepository.insertUser(name, birthday, email, introduce);
 		return count;
 	}
+	
+	//method to check duplicate email
+	public boolean isDuplicateEmail(String email)
+	{
+		int count = newUserRepository.selectCountEmail(email);
+		
+		if (count == 0)
+		{
+			return false;
+		}
+		return true;
+	}
 }

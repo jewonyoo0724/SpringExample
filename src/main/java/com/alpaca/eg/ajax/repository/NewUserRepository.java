@@ -17,4 +17,7 @@ public interface NewUserRepository {
 			@Param("birthday") String birthday, 
 			@Param("email") String email, 
 			@Param("introduce") String introduce);
+	
+	//how many emails retrieved
+	public int selectCountEmail(@Param("email") String email);
 }

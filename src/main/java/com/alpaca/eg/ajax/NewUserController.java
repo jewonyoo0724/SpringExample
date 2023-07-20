@@ -66,4 +66,26 @@ public class NewUserController {
 	{
 		return "ajax/user/input";
 	}
+	
+	//API
+	// get email -> if same email address exists, alert
+	@GetMapping("/email-confirm")
+	@ResponseBody
+	public Map<String, Boolean> isDuplicateEmail(@RequestParam("email") String email) //Boolean is wrapper class
+	{
+		Map<String, Boolean> duplicateMap = new HashMap<>();
+		
+		if (newUserService.isDuplicateEmail(email))
+		{
+			//duplicate
+			duplicateMap.put("isDuplicate", true);
+		}
+		else
+		{
+			//unique
+			duplicateMap.put("isDuplicate", false);
+		}
+		
+		return duplicateMap;
+	}
 }
