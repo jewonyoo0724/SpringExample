@@ -13,7 +13,7 @@
 	<label>Name: </label><input type="text" name="name" id="nameInput"><br>
 	<label>D.O.B.: </label><input type="text" name="birthday" id="birthInput"><br>
 	<label>Email: </label><input type="text" name="email" id="emailInput">
-	<button type="button" id="duplicateBtn">Availability Check</button><br>
+	<button type="button" id="duplicateBtn">Duplicate Check</button><br>
 	<label>Introduction: </label><br>
 	<textarea rows="5" cols="50" name="introduce" id="introInput"></textarea>
 	<button type="button" id="addBtn" >Add</button>
